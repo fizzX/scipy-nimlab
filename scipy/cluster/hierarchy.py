@@ -1049,9 +1049,9 @@ def linkage(y, method='single', metric='euclidean', optimal_ordering=False):
         distance.is_valid_y(y, throw=True, name='y')
         [y] = _copy_arrays_if_base_present([y])
     elif y.ndim == 2:
-        if method in _EUCLIDEAN_METHODS and metric != 'euclidean':
-            raise ValueError("Method '{0}' requires the distance metric "
-                             "to be Euclidean".format(method))
+        # if method in _EUCLIDEAN_METHODS and metric != 'euclidean':
+        #     raise ValueError("Method '{0}' requires the distance metric "
+        #                      "to be Euclidean".format(method))
         if y.shape[0] == y.shape[1] and np.allclose(np.diag(y), 0):
             if np.all(y >= 0) and np.allclose(y, y.T):
                 _warning('The symmetric non-negative hollow observation '
